@@ -1,0 +1,261 @@
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+.header {
+    grid-area: header;
+}
+
+.hero {
+    grid-area: hero;
+}
+
+.about {
+    grid-area: about;
+}
+
+.services {
+    grid-area: services;
+}
+
+.projects {
+    grid-area: projects;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.6rem;
+
+    display: grid;
+    grid-template-areas:
+        "header header header header"
+        "hero hero hero hero"
+        "about about about about"
+        "services services services services"
+        "projects projects projects projects"
+        "footer footer footer footer";
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3rem;
+}
+
+.header h1.agency-title {
+    font-size: 3rem;
+    transition: 0.2s;
+}
+
+.header>nav.menu {
+    display: flex;
+    width: 50%;
+}
+
+.header>nav.menu ul {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+}
+
+.header>nav.menu ul li {
+    padding: 1rem 3rem;
+    cursor: pointer;
+    font-weight: 500;
+    transition: ease-in-out 0.3s;
+}
+
+.header>nav.menu ul li:not(:last-child) {
+    margin-right: 2%;
+}
+
+.header h1.agency-title:hover {
+    color: coral;
+}
+
+.header>nav.menu ul li:hover {
+    background-color: coral;
+    border-radius: 5rem;
+}
+
+.header>nav.menu ul li:hover>a {
+    color: #fff;
+}
+
+#menu-hamburguer,
+.menu-icon {
+    display: none;
+}
+
+.hero {
+    height: 87.5vh;
+    background: url(../images/lemons.jpg) center center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.hero h2 {
+    font-size: 4rem;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.hero::after {
+    content: url(../images/seta_preta.png);
+    position: absolute;
+    height: 35px;
+    bottom: 40px;
+    animation: downarrow 0.6s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes downarrow {
+    0% {
+        -webkit-transform: translateY(0);
+        opacity: 0.5;
+    }
+
+    100% {
+        -webkit-transform: translateY(0.5rem);
+        opacity: 1;
+    }
+}
+
+.about {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.about .about-descriptions {
+    padding: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about .about-descriptions h3.about-title {
+    font-size: 4rem;
+}
+
+.about .about-descriptions p.description {
+    font-size: 1.8rem;
+    margin-block: 3rem;
+}
+
+.about .about-descriptions a.btn-saiba-mais {
+    width: fit-content;
+}
+
+.about .about-descriptions a.btn-saiba-mais:hover {
+    font-weight: 700;
+}
+
+.about .bridge {
+    background: url(../images/bridge.jpg) center center/cover no-repeat;
+}
+
+.about .sky {
+    background: url(../images/sky.jpg) center center/cover no-repeat;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.services .services-info {
+    padding: 8% 3%;
+    text-align: center;
+}
+
+.services .services-info img {
+    min-width: 40%;
+    margin-bottom: 3rem;
+}
+
+.services .services-info p {
+    font-size: 2rem;
+    max-width: 400px;
+    margin: 2rem auto 0;
+}
+
+.services .services-info.seo {
+    background-color: lightskyblue;
+}
+
+.services .services-info.landing-pages {
+    background-color: lightpink;
+}
+
+.projects {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.projects img {
+    height: 100%;
+    transition: 0.3s;
+}
+
+.projects a:hover img {
+    opacity: 0.8;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: lightgreen;
+    padding-block: 10rem;
+    align-items: center;
+}
+
+.footer h4 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.footer nav {
+    margin-block: 5rem;
+    width: 100%;
+}
+
+.footer nav ul {
+    display: flex;
+    width: 100%;
+    gap: 12%;
+    justify-content: center;
+
+}
+
+.footer nav ul li a {
+    font-size: 2rem;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.footer .icons-socials i {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.footer nav ul li a:hover,
+.footer .icons-socials i:hover {
+    color: #fff;
+    font-weight: 700;
+}
+
+.footer .icons-socials {
+    display: flex;
+    font-size: 2.5rem;
+    gap: 5%;
+    width: 100%;
+    justify-content: center;
+}
